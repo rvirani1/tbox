@@ -41,6 +41,9 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bourbon (3.2.3)
+      sass (~> 3.2)
+      thor
     builder (3.2.2)
     capybara (2.4.3)
       mime-types (>= 1.16)
@@ -215,6 +218,7 @@ DEPENDENCIES
   aws-sdk
   better_errors
   binding_of_caller
+  bourbon
   capybara
   coffee-rails (~> 4.0.0)
   devise

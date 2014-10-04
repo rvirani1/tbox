@@ -17,7 +17,7 @@ gem 'gon'
 gem 'figaro'
 gem 'devise'
 gem 'aws-sdk'
-
+gem 'bourbon'
 
 group :development do
   gem 'pry-rails'
