@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'landing#index'
 
   get ':code', to: 'crates#show', constraints: { code: /\d{4}/}, as: :customer_show
+  post ':code', to: 'crates#show', constraints: { code: /\d{4}/}
 
 
   resources :crates, except: [:new, :edit] do
