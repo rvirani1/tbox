@@ -55,14 +55,12 @@ body {
 #tiy-createNew {
   font-size: 25px;
   text-decoration: none;
-  margin: 0px 0px 20px 0px;
-  padding: 30px 0px;
   color: HSLA(254, 100%, 54%, .9);
   transition: background-color .5s, padding .2s;
   &:hover {
     color: hsla(0, 0%, 98%, 1);
     border: none;
-    padding: 15px;
+    padding: 30px;
   }
   img {
     width: 40px;
