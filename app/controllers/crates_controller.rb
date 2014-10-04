@@ -2,6 +2,7 @@ class CratesController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => [:show, :upload_file, :delete_upload]
 
   def index
+    @user = current_user
     @crates = current_user.crates
     gon.crates = @crates
     respond_to do |format|
