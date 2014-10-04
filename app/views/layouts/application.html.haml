@@ -2,8 +2,9 @@
 %html
   %head
     %title Tbox
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'application', media: 'all'
+    = stylesheet_link_tag "//normalize-css.googlecode.com/svn/trunk/normalize.css"
+    = javascript_include_tag 'application'
     = include_gon
     = csrf_meta_tags
   %body
