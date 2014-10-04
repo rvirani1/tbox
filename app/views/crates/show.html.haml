@@ -1,0 +1,23 @@
+.container(ng-controller="cratesShowCtrl")
+  .logo
+    %a(href="https://s3.amazonaws.com/uploads.hipchat.com/31349/1240659/U5fvR0kjfkChSEF/logo2.png")
+      %img(src="https://s3.amazonaws.com/uploads.hipchat.com/31349/1240659/U5fvR0kjfkChSEF/logo2.png" height="50px")
+  -#%img.settings(src="http://etc-mysitemyway.s3.amazonaws.com/icons/legacy-previews/icons/black-ink-grunge-stamps-textures...")
+  -#%a(href="settings")
+  -if @user.guest?
+    .text-center= '{{crate.title}}'
+  -else
+    %a.text-center(href="#" editable-text="crate.title" onbeforesave="updateCrate($data)")= '{{crate.title}}'
+
+  .tboxList.row.clearfix
+    =form_tag upload_file_crate_path(@crate), class: "upload-form" do
+      %input#createNew.btn.btn-default.center-block(type="filepicker" data-fp-button-text="Upload File" name="fileURL" ng-model="filepickerURL" ng-change="sendBlob()")
+    %ul.listedBoxes.list-group(ng-repeat="upload in uploads")
+      %li.list-group-item.clearfix
+        .pull-left= '{{upload.url}}'
+        -unless @user.guest?
+          .btn.btn-default.pull-right(ng-click="deleteUpload(upload.id)") Delete
+- unless @user.guest?
+  .row
+    %button.btn.btn-default(onclick="TogetherJS(this); return false;") Direct Help URL
+= javascript_include_tag "https://togetherjs.com/togetherjs-min.js"

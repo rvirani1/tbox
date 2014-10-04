@@ -1,10 +1,15 @@
 !!!
-%html
+%html(ng-app="tboxApp")
   %head
     %title Tbox
     = stylesheet_link_tag 'application', media: 'all'
     = stylesheet_link_tag "//normalize-css.googlecode.com/svn/trunk/normalize.css"
+    = stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+    = javascript_include_tag '//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js'
+    = javascript_include_tag '//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-resource.js'
     = javascript_include_tag 'application'
+    = javascript_include_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'
+    = javascript_include_tag '//api.filepicker.io/v1/filepicker.js'
     = include_gon
     = csrf_meta_tags
   %body

@@ -1,0 +1,25 @@
+%div(ng-controller="crateIndexCtrl")
+  .modal.fade.new-crate-modal
+    .modal-dialog.modal-sm
+      .modal-content
+        .modal-header
+          %h4.text-center.modal-title Create Crate
+        .modal-body
+          %form.form-inline(role="form" ng-submit="newCrateSubmit()" novalidate)
+            .form-group
+              %input.form-control(type="text" placeholder="Enter a title" ng-model="formTitleInput" required)
+            %button.btn.btn-primary(type="submit") Create
+  .container
+    .logo
+      %a(href="https://s3.amazonaws.com/uploads.hipchat.com/31349/1240659/U5fvR0kjfkChSEF/logo2.png")
+        %img(src="https://s3.amazonaws.com/uploads.hipchat.com/31349/1240659/U5fvR0kjfkChSEF/logo2.png" height="50px")
+    -#%img.settings(src="http://etc-mysitemyway.s3.amazonaws.com/icons/legacy-previews/icons/black-ink-grunge-stamps-textures...")
+    -#%a(href="settings")
+    .tboxList.row.clearfix
+      #createNew.btn.btn-default.center-block(ng-click="showNewCrateModal()") Add Box
+      %ul.listedBoxes.list-group
+        %div(ng-repeat="crate in crates")
+          %li.list-group-item.clearfix
+            %a.pull-left(ng-href="/{{crate.code}}")= '{{crate.title}}'
+            %button.btn.btn-danger.pull-right(ng-click="deleteCrate(crate.id)") Delete
+            .pull-right= '{{crate.code}}'

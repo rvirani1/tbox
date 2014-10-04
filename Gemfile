@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 
 gem 'rails', '4.1.6'
@@ -19,6 +20,7 @@ gem 'devise'
 gem 'aws-sdk'
 gem 'neat'
 gem 'bourbon'
+gem 'rails-assets-angular-xeditable'
 
 
 group :development do

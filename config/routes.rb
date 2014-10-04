@@ -6,6 +6,16 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'landing#index'
 
+  get ':code', to: 'crates#show', constraints: { code: /\d{4}/}, as: :customer_show
+
+
+  resources :crates, except: [:new, :edit] do
+    member do
+      post 'upload_file' => 'crates#upload_file'
+      delete 'delete_upload/:upload_id' => 'crates#delete_upload'
+    end
+  end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
