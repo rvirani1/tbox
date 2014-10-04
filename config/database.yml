@@ -78,8 +78,3 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: tbox_production
-  username: tbox
-  password: <%= ENV['TBOX_DATABASE_PASSWORD'] %>

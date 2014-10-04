@@ -17,6 +17,8 @@ gem 'gon'
 gem 'figaro'
 gem 'devise'
 gem 'aws-sdk'
+gem 'neat'
+gem 'bourbon'
 
 
 group :development do
