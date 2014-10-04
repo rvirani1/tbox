@@ -18,8 +18,6 @@ gem 'gon'
 gem 'figaro'
 gem 'devise'
 gem 'aws-sdk'
-gem 'neat'
-gem 'bourbon'
 gem 'rails-assets-angular-xeditable'
 
 
