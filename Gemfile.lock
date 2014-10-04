@@ -142,6 +142,7 @@ GEM
     rails-assets-angular (1.2.25)
     rails-assets-angular-xeditable (0.1.8)
       rails-assets-angular (~> 1.0)
+    rails-assets-bpopup (0.10.0.1)
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
@@ -234,6 +235,7 @@ DEPENDENCIES
   pry-rails
   rails (= 4.1.6)
   rails-assets-angular-xeditable
+  rails-assets-bpopup
   rails_12factor
   rspec-rails
   sass-rails (~> 4.0.3)

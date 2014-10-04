@@ -1,7 +1,9 @@
 app.controller("crateIndexCtrl", ["$scope", "$http", "crateResource", function($scope, $http, crateResource) {
   $scope.crates = gon.crates;
+  $scope.showingModal = false;
   $scope.showNewCrateModal = function() {
-    $('.new-crate-modal').modal('show')
+    $scope.showingModal = true;
+    $('.new-crate-modal').bPopup();
   };
 
   $scope.formTitleInput = "";

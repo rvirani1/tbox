@@ -1,14 +1,8 @@
 %div(ng-controller="crateIndexCtrl")
-  -#.modal.fade.new-crate-modal
-  -#  .modal-dialog.modal-sm
-  -#    .modal-content
-  -#      .modal-header
-  -#        %h4.text-center.modal-title Create Crate
-  -#      .modal-body
-  -#        %form.form-inline(role="form" ng-submit="newCrateSubmit()" novalidate)
-  -#          .form-group
-  -#            %input.form-control(type="text" placeholder="Enter a title" ng-model="formTitleInput" required)
-  -#          %button.btn.btn-primary(type="submit") Create
+  .new-crate-modal(ng-show="showingModal")
+    %form(role="form" ng-submit="newCrateSubmit()" novalidate)
+      %input(type="text" placeholder="Enter a title" ng-model="formTitleInput" required)
+      %button(type="submit") Create
   .tiy-container
     .tiy-logo
       %a(href="/")

@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bpopup/jquery.bpopup
 //= require angular-xeditable
 //= require_tree .
