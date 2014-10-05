@@ -1,0 +1,22 @@
+.landing-container
+  .landing-console
+    .landing-graybox
+      .landing-logo
+        %img{:src => "http://i.imgur.com/tTRdWNT.gif"}/
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .landing-interior
+        = f.email_field :email, autofocus: true, class: "sign_in landing", placeholder: "Email"
+        = f.password_field :password, autocomplete: "off", class: "sign_in landing", placeholder: "Password"
+        %ul.landing-buttons
+          %li.landing-signup.landing
+            =link_to "Sign Up", new_user_registration_path, class: "landing-noUnderline_white landing"
+          %li.landing-login.landing
+            = f.submit "Log in", class: "landing-noUnderline landing"
+    / links or forgot password
+    .landing-forgot_password
+      %a.landing-noUnderline.landing{:href => "#"} Forgot Password?
+  .landing-right
+    %h2.landing Sending files. Simplified.
+    %p.landing
+      File exchange should be a hassle-free part of your business. With T.BOX, files are sent and retrieved via unique URLs. Just log-in, select a box, and upload. Your customers don't need to set up an account to be able to upload into your box. To access your files, all they need is the box's unique URL. Quick and easy.
+      %a.landing-noUnderline_white{:href => "#"} Click here to find out more.s

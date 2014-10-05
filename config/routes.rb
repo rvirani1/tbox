@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'landing#index'
+  root 'crates#index'
 
   get ':code', to: 'crates#show', constraints: { code: /\d{4}/}, as: :customer_show
   post ':code', to: 'crates#show', constraints: { code: /\d{4}/}
