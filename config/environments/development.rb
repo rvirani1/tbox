@@ -38,4 +38,15 @@ Rails.application.configure do
 
   # Required by devise
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  #Mandrill setup
+  config.action_mailer.smtp_settings = {
+      :address   => "smtp.mandrillapp.com",
+      :port      => 25, # ports 587 and 2525 are also supported with STARTTLS
+      :enable_starttls_auto => true, # detects and uses STARTTLS
+      :user_name => "app30412159@heroku.com",
+      :password  => "l5Q72udfhJvqU3novhDHaw", # SMTP password is any valid API key
+      :authentication => 'login', # Mandrill supports 'plain' or 'login'
+      :domain => 'tbox-roar.herokuapp.com', # your domain to identify your server when connecting
+  }
 end

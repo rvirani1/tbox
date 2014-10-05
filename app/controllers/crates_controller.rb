@@ -58,6 +58,7 @@ class CratesController < ApplicationController
     @crate = Crate.find params[:id]
     @upload = @crate.uploads.new upload_params
     if @upload.save
+      UploadMailer.new_upload(@crate).deliver if @crate.user == current_user
       render :json => @crate.uploads
     else
       head :bad_request
