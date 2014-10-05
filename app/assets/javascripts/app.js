@@ -1,5 +1,5 @@
-var app = angular.module("tboxApp", ['ngResource', "xeditable"]);
+var app = angular.module("tboxApp", ['ngResource', 'ngClipboard']);
 
-app.run(function(editableOptions) {
-  editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
-});
+app.config(['ngClipProvider', function(ngClipProvider) {
+  ngClipProvider.setPath("zeroclipboard/zeroclipboard.swf");
+}]);

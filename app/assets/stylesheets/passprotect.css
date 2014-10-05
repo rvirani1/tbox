@@ -1,14 +1,14 @@
 .passpcontainer{
     width: 350px;
     height: 300px;
-    margin-left: 400px;
+    margin: 0 auto;
     font-family:'Varela', serif;
     text-align: center;
     background-color: hsla(0, 0%, 93%, 1);
 }
 .passp {
     color: black;
-    font-size: 20px;
+    font-size: 16px;
     font-family:'Varela', serif;
     padding-left: 50px;
     padding-right: 50px;
@@ -36,7 +36,7 @@ input.passp-enter-password{
     width: 300px;
     text-align: center;
     height: 50px;
-    font-size: 30px;
+    font-size: 20px;
     border-radius: 3px;
 }
 

@@ -4,17 +4,14 @@
       NEW CRATE
       %input.newCrateName(type="text" placeholder="Enter a title" ng-model="formTitleInput" required)
       %input.newCrateSubmit(type="submit" value="MAKE IT")
-  -#.new-crate-modal(ng-show="showingModal") done
-  -#  %form(role="form" ng-submit="newCrateSubmit()" novalidate) done
-  -#    %input(type="text" placeholder="Enter a title" ng-model="formTitleInput" required)
-  -#    %button(type="submit") Create
   .tiy-container
     .tiy-logo
       %a(href="/")
         %img(src="https://s3.amazonaws.com/uploads.hipchat.com/31349/1240659/U5fvR0kjfkChSEF/logo2.png")
     .tiy-settings
-      =link_to edit_user_registration_path(@user) do
-        %img.tiy-gear(src="http://etc-mysitemyway.s3.amazonaws.com/icons/legacy-previews/icons/black-ink-grunge-stamps-textures-icons-business/077031-black-ink-grunge-stamp-textures-icon-business-gear.png")
+      %a{:href => "/users/edit"}
+        %img.tiy-gear{:src => "http://etc-mysitemyway.s3.amazonaws.com/icons/legacy-previews/icons/black-ink-grunge-stamps-textures-icons-business/077031-black-ink-grunge-stamp-textures-icon-business-gear.png"}
+      =link_to "Sign Out", destroy_user_session_path, class: "allSubmitButtons", method: :delete
     .tiy-tboxList
       %ul.tiy-listedBoxes
         -#start add a box
@@ -28,11 +25,12 @@
               = '{{crate.title}}'
               .tiy-buttons
                 %a.tiy-lock(href="#")
-                  %img.tiy-lock(src="http://png-3.findicons.com/files/icons/1579/devine/256/un_lock.png")
+                  %img.tiy-lock(src="http://png-3.findicons.com/files/icons/1579/devine/256/un_lock.png" ng-hide="crate.password")
+                  %img.tiy-lock(src="http://simpleicon.com/wp-content/uploads/lock-2.png" ng-show="crate.password")
                 -# end lock
-                %a.tiy-clipboard(href="#")
+                %a.tiy-clipboard(href="#" clip-copy="build_crate_url(crate.code)" clip-click="doSomething()")
                   %img(src="http://uxrepo.com/static/icon-sets/ionicons/svg/clipboard.svg")
                 -# end clipboard
-                %input(type="text" ng-value="{{crate.code}}")
+                %input.copyCodeInput(type="text" ng-value="build_crate_url(crate.code)")
                 %a.tiy-delete(ng-click="deleteCrate(crate.id)")
                   %img(src="http://megaicons.net/static/img/icons_sizes/8/178/512/editing-delete-icon.png")

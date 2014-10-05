@@ -7,15 +7,12 @@
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       .landing-interior_two
         = devise_error_messages!
-        = f.email_field :email, autofocus: true, class: "sign_in landing", placeholder: "Email"
-        = f.password_field :password, autocomplete: "off", class: "sign_in landing", placeholder: "Password"
-        = f.password_field :password_confirmation, autocomplete: "off", class: "sign_in landing", placeholder: "Confirm Password"
+        = f.email_field :email, autofocus: true, class: "sign_in landing different", placeholder: "Email"
+        = f.password_field :password, autocomplete: "off", class: "sign_in landing different", placeholder: "Password"
+        = f.password_field :password_confirmation, autocomplete: "off", class: "sign_in landing different", placeholder: "Confirm Password"
         %ul.landing-buttons
           %li.landing-login.landing
-            %a= f.submit "Sign Up", class: "landing-noUnderline landing"
-    / links or forgot password
-    .landing-forgot_password
-      %a.landing-noUnderline.landing{:href => "#"} Forgot Password?
+            = f.submit "Sign Up", class: "landing-noUnderline landing allSubmitButtons"
   .landing-right
     %h2.landing Sending files. Simplified.
     %p.landing

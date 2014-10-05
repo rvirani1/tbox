@@ -82,33 +82,28 @@ p.landing{
 
 .landing-buttons {
   list-style-type: none;
-  margin: 10px;
-  margin-left: 80px;
 }
 li.landing {
   display: inline;
 }
-.landing-login {
+.landing-login input{
   width: 150px;
   height: 50px;
-  background-color: hsla(0, 0%, 78%, 1);
-  padding-left:10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
+  background-color: hsla(323,100%,50%,1);
+  border: none;
+  font-size: 30px;
+
 }
 
 .landing-signup {
   width: 150px;
   height: 50px;
   background-color: hsla(323,100%,50%,1);
-  padding-left:10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
 }
 
 input.sign_in.landing {
+  margin-top: 20px;
   width: 350px;
-  margin: 25px;
   height: 50px;
   font-size: 30px;
   font-family:'Varela', serif;
@@ -117,11 +112,18 @@ input.sign_in.landing {
 
 
 .landing-forgot_password {
-  font-size: 18px;
+  font-size: 26px;
   margin-left: 175px;
   margin-top: 20px;
   margin-bottom:50px;
-
+  text-align: right;
+  a {
+    text-decoration: none;
+    color: hsla(323,100%,50%,1);
+    &:hover {
+      border-bottom: 5px solid white;
+    }
+  }
 }
 
 .landing-noUnderline:hover {
@@ -135,8 +137,12 @@ input.sign_in.landing {
   border-bottom: 5px solid white;
 }
 
-
-a.landing {
+input.landing.different {
   text-decoration: none;
-  color: hsla(0, 0%, 21%, 1);
+  color: black;
+}
+
+input.landing {
+  text-decoration: none;
+  color: white;
 }

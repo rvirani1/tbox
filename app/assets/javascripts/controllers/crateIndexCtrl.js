@@ -28,5 +28,13 @@ app.controller("crateIndexCtrl", ["$scope", "$http", "crateResource", function($
     crateResource.destroy({id: id}, {}, function(response) {
       $scope.crates = response;
     })
-  }
+  };
+
+  $scope.build_crate_url = function(code) {
+    return window.location.origin + '/' + code
+  };
+
+  $scope.getTextToCopy = function() {
+    return
+  };
 }]);

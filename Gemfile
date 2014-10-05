@@ -21,6 +21,7 @@ gem 'aws-sdk'
 gem 'rails-assets-angular-xeditable'
 gem 'rails-assets-bpopup'
 gem 'rails-assets-zeroclipboard'
+gem 'rails-assets-ng-clip'
 
 
 group :development do

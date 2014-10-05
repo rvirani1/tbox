@@ -5,16 +5,15 @@
         %img{:src => "http://i.imgur.com/tTRdWNT.gif"}/
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .landing-interior
-        = f.email_field :email, autofocus: true, class: "sign_in landing", placeholder: "Email"
-        = f.password_field :password, autocomplete: "off", class: "sign_in landing", placeholder: "Password"
+        = f.email_field :email, autofocus: true, class: "sign_in landing different", placeholder: "Email"
+        = f.password_field :password, autocomplete: "off", class: "sign_in landing different", placeholder: "Password"
         %ul.landing-buttons
-          %li.landing-signup.landing
-            =link_to "Sign Up", new_user_registration_path, class: "landing-noUnderline_white landing"
-          %li.landing-login.landing
-            = f.submit "Log in", class: "landing-noUnderline landing"
-    / links or forgot password
+          %li.landing-login.landing.sign_in
+            = f.submit "Log in", class: "allSubmitButtons"
+          %br
+          %br
     .landing-forgot_password
-      %a.landing-noUnderline.landing{:href => "#"} Forgot Password?
+      =link_to "Sign Up Now!", new_user_registration_path, class: "landing"
   .landing-right
     %h2.landing Sending files. Simplified.
     %p.landing

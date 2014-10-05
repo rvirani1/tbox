@@ -16,4 +16,5 @@
 //= require spoiler.min
 //= require angular-xeditable
 //= require zeroclipboard
+//= require ng-clip
 //= require_tree .

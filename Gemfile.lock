@@ -143,6 +143,9 @@ GEM
     rails-assets-angular-xeditable (0.1.8)
       rails-assets-angular (~> 1.0)
     rails-assets-bpopup (0.10.0.1)
+    rails-assets-ng-clip (0.2.4)
+      rails-assets-angular (>= 1.0.4)
+      rails-assets-zeroclipboard (~> 2.1.0)
     rails-assets-zeroclipboard (2.1.6)
     rails_12factor (0.0.2)
       rails_serve_static_assets
@@ -237,6 +240,7 @@ DEPENDENCIES
   rails (= 4.1.6)
   rails-assets-angular-xeditable
   rails-assets-bpopup
+  rails-assets-ng-clip
   rails-assets-zeroclipboard
   rails_12factor
   rspec-rails
