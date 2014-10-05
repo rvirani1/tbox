@@ -18,7 +18,6 @@ app.controller("crateIndexCtrl", ["$scope", "$http", "crateResource", function($
     };
     crateResource.create({}, data, function(response) {
         $scope.crates = response;
-        $('.new-crate-modal').modal('hide');
         $scope.formTitleInput = "";
     });
     $scope.bPopup.close();

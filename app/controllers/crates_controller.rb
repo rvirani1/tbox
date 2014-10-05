@@ -39,7 +39,7 @@ class CratesController < ApplicationController
   def update
     @crate = current_user.crates.includes(:uploads).find(params[:id])
     if @crate.update_attributes update_params
-      render :json => current_user.crates
+      render :json => @crate
     else
       head :bad_request
     end

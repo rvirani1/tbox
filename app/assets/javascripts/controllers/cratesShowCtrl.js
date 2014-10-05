@@ -6,7 +6,7 @@ app.controller("cratesShowCtrl", ["$scope", "$http", "crateResource", function($
 
   $scope.updateCrate = function(newTitle) {
     crateResource.update({id: $scope.crate.id }, {title: newTitle}, function(response) {
-      $scope.crates = response;
+      $scope.crate = response;
       return true
     });
   };
@@ -38,6 +38,47 @@ app.controller("cratesShowCtrl", ["$scope", "$http", "crateResource", function($
       .error(function(response) {
         console.log("Error for upload file ", response)
       });
-  }
+  };
 
+  $scope.showPasswordEditModalStatus = false;
+
+  $scope.showPasswordEditModal = function() {
+    $scope.showPasswordEditModalStatus = true;
+    $scope.bPopup = $('.passwordEditModal').bPopup({
+      speed: 650,
+      transition: 'slideIn',
+      transitionClose: 'slideBack'
+    });
+  };
+
+  $scope.passwordUpdateSubmit = function() {
+    data = {
+      password: $scope.crate.password
+    };
+    crateResource.update({id: $scope.crate.id}, data, function(response) {
+      $scope.crate = response;
+    });
+    $scope.bPopup.close();
+  };
+
+  $scope.showTitleEditModalStatus = false;
+
+  $scope.showTitleEditModal = function() {
+    $scope.showTitleEditModalStatus = true;
+    $scope.bPopup = $('.titleEditModal').bPopup({
+      speed: 650,
+      transition: 'slideIn',
+      transitionClose: 'slideBack'
+    });
+  };
+
+  $scope.titleUpdateSubmit = function() {
+    data = {
+      title: $scope.crate.title
+    };
+    crateResource.update({id: $scope.crate.id}, data, function(response) {
+      $scope.crate = response;
+    });
+    $scope.bPopup.close();
+  };
 }]);

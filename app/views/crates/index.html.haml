@@ -1,5 +1,5 @@
 %div(ng-controller="crateIndexCtrl")
-  .newCrateCreator(ng-show="showingModal")
+  .newCrateCreator.modalStyles(ng-show="showingModal")
     %form(role="form" ng-submit="newCrateSubmit()" novalidate)
       NEW CRATE
       %input.newCrateName(type="text" placeholder="Enter a title" ng-model="formTitleInput" required)
