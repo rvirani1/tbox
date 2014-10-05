@@ -1,12 +1,17 @@
 %div(ng-controller="crateIndexCtrl")
-  .new-crate-modal(ng-show="showingModal")
+  .newCrateCreator(ng-show="showingModal")
     %form(role="form" ng-submit="newCrateSubmit()" novalidate)
-      %input(type="text" placeholder="Enter a title" ng-model="formTitleInput" required)
-        %button(type="submit") Create
-.tiy-container
-  .tiy-logo
-    %a(href="/")
-      %img(src="https://s3.amazonaws.com/uploads.hipchat.com/31349/1240659/U5fvR0kjfkChSEF/logo2.png")
+      NEW CRATE
+      %input.newCrateName(type="text" placeholder="Enter a title" ng-model="formTitleInput" required)
+      %input.newCrateSubmit(type="submit" value="MAKE IT")
+  -#.new-crate-modal(ng-show="showingModal") done
+  -#  %form(role="form" ng-submit="newCrateSubmit()" novalidate) done
+  -#    %input(type="text" placeholder="Enter a title" ng-model="formTitleInput" required)
+  -#    %button(type="submit") Create
+  .tiy-container
+    .tiy-logo
+      %a(href="/")
+        %img(src="https://s3.amazonaws.com/uploads.hipchat.com/31349/1240659/U5fvR0kjfkChSEF/logo2.png")
     .tiy-settings
       =link_to edit_user_registration_path(@user) do
         %img.tiy-gear(src="http://etc-mysitemyway.s3.amazonaws.com/icons/legacy-previews/icons/black-ink-grunge-stamps-textures-icons-business/077031-black-ink-grunge-stamp-textures-icon-business-gear.png")
