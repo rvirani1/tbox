@@ -1,4 +1,4 @@
-app.factory('crateResource', function($resource) {
+app.factory('crateResource', ["$resource", function($resource) {
   return $resource('/crates/:id.json', { id: '@id' },
     {
       'create':     { method: 'POST', isArray: true },
@@ -7,4 +7,4 @@ app.factory('crateResource', function($resource) {
       'update':     { method: 'PUT', isArray: true },
       'destroy':    { method: 'DELETE', isArray: true }
     });
-});
+}]);
