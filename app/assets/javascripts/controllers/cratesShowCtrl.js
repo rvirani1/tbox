@@ -12,7 +12,6 @@ app.controller("cratesShowCtrl", ["$scope", "$http", "crateResource", function($
   };
 
   $scope.deleteUpload = function(upload_id) {
-    debugger;
     $http.delete("/crates/" + $scope.crate.id + "/delete_upload/" + upload_id +".json", {})
       .success(function(response) {
         $scope.uploads = response;

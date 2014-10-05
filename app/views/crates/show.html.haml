@@ -20,7 +20,7 @@
       =link_to "Sign Out", destroy_user_session_path, class: "allSubmitButtons", method: :delete
     %span.tiy-settings.tiy-password-settings
       Password:
-      %spoiler= '{{crate.password}}'
+      %spoiler= "{{crate.password || '\x22Lacking Word of Pass\x22'}}"
       %nbsp
       %nbsp
       %a(href="#" ng-click="showPasswordEditModal()") Edit
@@ -39,6 +39,6 @@
           %a(ng-href="{{upload.url}}")
             = '{{upload.filename}}'
           -unless @user.guest?
-            %a.tiy-delete(ng-click="deleteUpload(upload.id)")
+            %a.tiy-delete(ng-click="deleteUpload(upload.id)" style="float: right; margin-right: 10px;")
               %img{:src => "http://megaicons.net/static/img/icons_sizes/8/178/512/editing-delete-icon.png"}
   = javascript_include_tag "https://togetherjs.com/togetherjs-min.js"
