@@ -6,7 +6,7 @@
   -if @user.guest?
     %span.pageTitle= '{{crate.title}}'
   -else
-    %span.pageTitle(href="#" editable-text="crate.title" onbeforesave="updateCrate($data)")= '{{crate.title}}'
+    %span.pageTitle(href="#")= '{{crate.title}}'
   %span.tiy-password-settings
     Password:
     %a{:href => "#"} No Password

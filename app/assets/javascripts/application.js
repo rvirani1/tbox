@@ -15,4 +15,5 @@
 //= require bpopup/jquery.bpopup
 //= require spoiler.min
 //= require angular-xeditable
+//= require zeroclipboard
 //= require_tree .

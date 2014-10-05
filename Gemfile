@@ -20,6 +20,7 @@ gem 'devise'
 gem 'aws-sdk'
 gem 'rails-assets-angular-xeditable'
 gem 'rails-assets-bpopup'
+gem 'rails-assets-zeroclipboard'
 
 
 group :development do
