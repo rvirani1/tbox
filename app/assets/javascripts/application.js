@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bpopup/jquery.bpopup
+//= require spoiler.min
 //= require angular-xeditable
 //= require_tree .

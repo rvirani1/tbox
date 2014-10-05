@@ -37,6 +37,22 @@ body {
     font-size: 20px;
     color: black;
   }
+
+  #tiy-signOut {
+    font-size: 20px;
+    display: block;
+    float: left;
+    margin-top: 3px;
+    background-color: HSLA(192, 5%, 82%, 1);
+    padding: 10px;
+    border: 1px solid HSLA(0, 0%, 100%, 1);
+    &:hover {
+      padding: 12px;
+      background-color: HSLA(323, 100%, 50%, 1);
+      color: white;
+      border: 1px solid black;
+    }
+  }
 }
 .tiy-gear {
   width: 50px;
@@ -158,4 +174,27 @@ input[type=submit].newCrateSubmit {
   cursor:pointer;
   -webkit-border-radius: 5px;
   border-radius: 5px;
+}
+
+.pageTitle {
+  font-size: 40px;
+  margin: 30px;
+  padding: 30px;
+  position: relative;
+  top: 100px;
+  z-index: 1;
+}
+
+.tiy-password-settings {
+  position: relative;
+  top: 100px;
+  z-index: 1;
+  a {
+    color: HSLA(323, 100%, 50%, 1);
+    text-decoration: none;
+    &:hover {
+      color: HSLA(254, 100%, 54%, 1);
+      font-size: 30px;
+    }
+  }
 }

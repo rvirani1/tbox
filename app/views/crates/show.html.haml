@@ -1,23 +1,58 @@
-.container(ng-controller="cratesShowCtrl")
-  .logo
-    %a(href="https://s3.amazonaws.com/uploads.hipchat.com/31349/1240659/U5fvR0kjfkChSEF/logo2.png")
+/ crate file page html
+.tiy-container(ng-controller="cratesShowCtrl")
+  .tiy-logo
+    %img{:src => "https://s3.amazonaws.com/uploads.hipchat.com/31349/1240659/U5fvR0kjfkChSEF/logo2.png"}/
+    %a{:href => "https://s3.amazonaws.com/uploads.hipchat.com/31349/1240659/U5fvR0kjfkChSEF/logo2.png"}
+  -if @user.guest?
+    %span.pageTitle= '{{crate.title}}'
+  -else
+    %span.pageTitle(href="#" editable-text="crate.title" onbeforesave="updateCrate($data)")= '{{crate.title}}'
+  %span.tiy-password-settings
+    Password:
+    %a{:href => "#"} No Password
+  .tiy-settings
+    %a#tiy-signOut{:href => "#"} Sign Out
+    %a{:href => "#"}
+      %img.tiy-gear{:src => "http://etc-mysitemyway.s3.amazonaws.com/icons/legacy-previews/icons/black-ink-grunge-stamps-textures-icons-business/077031-black-ink-grunge-stamp-textures-icon-business-gear.png"}/
+  .tiy-tboxList
+    =form_tag upload_file_crate_path(@crate), class: "upload-form" do
+      %input#tiy-createNew#tiy-createNew(type="filepicker" data-fp-button-text="Upload File" name="fileURL" ng-model="filepickerURL" ng-change="sendBlob()")
+    %ul.tiy-listedBoxes
+      / start upload a file
+      %li#tiy-createNew
+        %img{:src => "http://icons.iconarchive.com/icons/icons8/ios7/256/Very-Basic-Upload-To-Cloud-icon.png"}
+        Upload
+      %li(ng-repeat="upload in uploads")
+        %a(ng-href="{{upload.url}}")
+          = '{{upload.filename}}'
+        -unless @user.guest?
+          %a.tiy-delete(ng-click="deleteUpload(upload.id)")
+            %img{:src => "http://megaicons.net/static/img/icons_sizes/8/178/512/editing-delete-icon.png"}
+
+-#.container() done
+  -#.logo
+    -#%a(href="https://s3.amazonaws.com/uploads.hipchat.com/31349/1240659/U5fvR0kjfkChSEF/logo2.png")
       %img(src="https://s3.amazonaws.com/uploads.hipchat.com/31349/1240659/U5fvR0kjfkChSEF/logo2.png" height="50px")
   -#%img.settings(src="http://etc-mysitemyway.s3.amazonaws.com/icons/legacy-previews/icons/black-ink-grunge-stamps-textures...")
   -#%a(href="settings")
-  -if @user.guest?
+  -#-if @user.guest?
     .text-center= '{{crate.title}}'
-  -else
+  -#-else
     %a.text-center(href="#" editable-text="crate.title" onbeforesave="updateCrate($data)")= '{{crate.title}}'
 
-  .tboxList.row.clearfix
+  .tboxList
     =form_tag upload_file_crate_path(@crate), class: "upload-form" do
-      %input#createNew.btn.btn-default.center-block(type="filepicker" data-fp-button-text="Upload File" name="fileURL" ng-model="filepickerURL" ng-change="sendBlob()")
-    %ul.listedBoxes.list-group(ng-repeat="upload in uploads")
-      %li.list-group-item.clearfix
-        .pull-left= '{{upload.url}}'
+      %input#createNew(type="filepicker" data-fp-button-text="Upload File" name="fileURL" ng-model="filepickerURL" ng-change="sendBlob()")
+    %ul.listedBoxes(ng-repeat="upload in uploads")
+      %li
+        = '{{upload.url}}'
         -unless @user.guest?
-          .btn.btn-default.pull-right(ng-click="deleteUpload(upload.id)") Delete
+          %div(ng-click="deleteUpload(upload.id)") Delete
 - unless @user.guest?
   .row
     %button.btn.btn-default(onclick="TogetherJS(this); return false;") Direct Help URL
 = javascript_include_tag "https://togetherjs.com/togetherjs-min.js"
+:javascript
+  $(function() {
+    $("spoiler, .spoiler").spoilerAlert();
+  }
