@@ -231,9 +231,9 @@ input[type=submit].newCrateSubmit {
   padding: 10px;
   box-shadow: 4px 4px 3px black;
   &:hover {
-    background: white;
+    background: rgba(235, 41, 158, 1);
     cursor: pointer;
-    border-bottom: 5px solid hsla(323,100%,50%,1);
+    border-bottom: 5px solid white;
     background-position: 0 -24px;
   }
 }
