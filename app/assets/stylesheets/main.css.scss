@@ -201,15 +201,16 @@ input[type=submit].newCrateSubmit {
 }
 
 .allSubmitButtons {
-  color: white;
+  color: black;
   border: 1px solid white;
   font-weight: bold;
   background: HSLA(323, 100%, 50%, 1) url(/examples/images/buttonbg.png) repeat-x;
   padding: 10px;
   box-shadow: 4px 4px 3px black;
   &:hover {
-    background: HSLA(254, 100%, 54%, 1);
+    background: white;
     cursor: pointer;
+    border-bottom: 5px solid hsla(323,100%,50%,1);
     background-position: 0 -24px;
   }
 }
